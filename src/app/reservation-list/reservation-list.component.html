@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Reservation List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>reservationId</th>
+            <th>datTrajet</th>
+            <th>busId</th>
+            <th>clinetId</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations | async">
+                <td>{{reservation.reservationId}}</td>
+                <td>{{reservation.dateTrajet}}</td>
+                <td>{{reservation.busId}}</td>
+                <td>{{reservation.clientId}}</td>
+                <td><button (click)="deleteReservation(reservation.reservationId)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
